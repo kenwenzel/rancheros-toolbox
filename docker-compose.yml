@@ -1,0 +1,13 @@
+version: '2'
+services:
+  ssh-agent:
+    image: "docksal/ssh-agent"
+    volumes:
+      - ssh-agent:/.ssh-agent
+    labels:
+      # make ssh-agent a global service
+      io.rancher.scheduler.global: 'true'
+
+volumes:
+  ssh-agent:
+    external: true
