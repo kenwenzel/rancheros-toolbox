@@ -5,9 +5,16 @@ services:
     volumes:
       - ssh-agent:/.ssh-agent
     labels:
-      # make ssh-agent a global service
+      # make it a global service
       io.rancher.scheduler.global: 'true'
-
+  rancheros-provisioner:
+    image: "kenwenzel/rancheros-provisioner"
+    labels:
+      io.rancher.container.start_once: true
+      # make it a global service
+      io.rancher.scheduler.global: 'true'
+    volumes:
+      - /usr/bin:/host/usr/bin
 volumes:
   ssh-agent:
     external: true
