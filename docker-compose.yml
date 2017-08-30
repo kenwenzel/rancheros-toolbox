@@ -15,6 +15,7 @@ services:
       io.rancher.scheduler.global: 'true'
     volumes:
       - /usr/bin:/host/usr/bin
+      - /root:/host/root
 volumes:
   ssh-agent:
     external: true
