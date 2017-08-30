@@ -1,9 +1,12 @@
 version: '2'
 services:
   ssh-agent:
-    image: "docksal/ssh-agent"
+    image: "kenwenzel/ssh-agent"
     volumes:
+      - /root:/host
       - ssh-agent:/.ssh-agent
+    environment:
+      - CREATE_KEY=1
     labels:
       # make it a global service
       io.rancher.scheduler.global: 'true'
