@@ -23,6 +23,7 @@ services:
       GIT_CONFIG_DEFAULT: |
         ["ssh://docker@git.iwu.fraunhofer.de:29418"]
            insteadOf = git://git.iwu.fraunhofer.de
+           insteadOf = http://git.iwu.fraunhofer.de
 volumes:
   ssh-agent:
     external: true
